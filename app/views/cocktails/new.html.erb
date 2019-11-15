@@ -3,5 +3,9 @@
 <%= simple_form_for [@cocktail] do |c| %>
   <%= c.input :name %>
   <%= c.submit %>
+
+
+  <%= c.input :photo_cache, as: :hidden %>
+  <%= c.input :photo %>
 <% end %>
 
