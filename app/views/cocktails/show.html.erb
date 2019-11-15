@@ -1,15 +1,21 @@
 
-<h1>Cocktail Name</h1>
-<%= @cocktail.name %>
+<h1><%= @cocktail.name %></h1>
 
 
-<h2>Dose Names</h2>
-<% @doses.each do |dose| %>
-<p><%= dose.description %> with <%= dose.ingredient.name %></p>
-<% end %>
+<div class="card">
+  <h4>Dose Names</h4>
+  <ol>
+  <% @doses.each do |dose| %>
+    <li>
+      <p><%= dose.description %> with <%= dose.ingredient.name %><%= link_to "🗑️", dose_path(dose), method: :delete %></p>
+    </li>
+  <% end %>
+  </ol>
+
+</div>
 
 
-<%= link_to "Go back", cocktails_path  %>
+<p><%= link_to "Go back", root_path  %></p>
 
-<%= link_to "Add new ingredient", new_cocktail_dose_path(@cocktail)  %>
+<p><%= link_to "Add new ingredient", new_cocktail_dose_path(@cocktail)  %></p>
 
