@@ -31,5 +31,3 @@ class DosesController < ApplicationController
 
 end
 
-# ingredient_id
-

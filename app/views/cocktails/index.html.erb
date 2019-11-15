@@ -1,9 +1,22 @@
 <h1>Cocktails#index</h1>
 
-<ul>
-  <% @cocktails.each do |co| %>
-    <li><%= link_to co.name, cocktail_path(co)  %></li>
-  <% end %>
-  <%= link_to "ADD NEW COCKTAIL", new_cocktail_path  %>
+<% @cocktails.each do |co| %>
+  <div class="card">
+    <%= link_to cocktail_path(co), { class: "btn btn-primary" } do %>
+      <%= co.name %><span class="label label-primary">OPEN</span>
+    <% end %>
+  </div>
+<% end %>
+
+  <div class="btn btn-danger">
+    <%= link_to "ADD NEW COCKTAIL", new_cocktail_path  %>
+  </div>
+
+
+
+
+
+
 </ul>
+
 
